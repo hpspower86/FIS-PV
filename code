@@ -1,1 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
 
+def triangle(x, a, b, c, d, e):
+    """
+    Calculates the membership value for a triangular fuzzy function using if/elif/else.
+
+    Parameters:
+    x (float or np.array): The input value(s).
+    a (float): The left-most X point, paired with y value d.
+    b (float): The middle X point, paired with Y value of 1.
+    c (float): The right-most X point, paired with Y value e.
+    d (float): The y-value at point a.
+    e (float): The y-value at point c.
+
+    Returns:
+    float or np.array: The membership value(s).
+    """
+
+    if x < a:
+        return d
+    elif a <= x <= b:
+        return (x - a) / (b - a)
+    elif b < x <= c:
+        return (c - x) / (c - b)
+    elif x > c:
+        return e
+    else:
+        return 0
+
+print("Running Selesai")
